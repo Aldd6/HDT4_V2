@@ -1,6 +1,6 @@
 import java.util.Vector;
 
-public class StackVector<E> implements IStack<E> {
+public class StackVector<E> extends AbstractStack<E>{
     
     private Vector<E> vector = new Vector<>();
 
@@ -17,11 +17,6 @@ public class StackVector<E> implements IStack<E> {
     @Override
     public E peek(){
         return vector.get(size()-1);
-    }
-
-    @Override
-    public boolean empty(){
-        return vector.isEmpty();
     }
 
     @Override

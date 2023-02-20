@@ -1,4 +1,4 @@
-public class DoubleList<E> implements IList<E>{
+public class DoubleList<E> extends AbstractList<E>{
     private DoubleNode<E> beginning;
     private DoubleNode<E> end;
 
@@ -8,14 +8,6 @@ public class DoubleList<E> implements IList<E>{
     public DoubleList(){
         beginning = null;
         end = null;
-    }
-
-    /*
-     * IsEmpty
-     */
-    @Override
-    public boolean isEmpty(){
-        return beginning == null;
     }
 
     /*

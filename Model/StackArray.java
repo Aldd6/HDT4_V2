@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class StackArray<E> implements IStack<E> {
+public class StackArray<E> extends AbstractStack<E> {
 
     private ArrayList<E> array = new ArrayList<>();
 
@@ -17,11 +17,6 @@ public class StackArray<E> implements IStack<E> {
     @Override
     public E peek(){
         return array.get(size()-1);
-    }
-
-    @Override
-    public boolean empty(){
-        return array.isEmpty();
     }
 
     @Override

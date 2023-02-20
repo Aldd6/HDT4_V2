@@ -1,14 +1,14 @@
-public class Lista<E> implements IList<E> {
-    protected Nodo<E> cabeza, cola;
+public class Lista<E> extends AbstractList<E> {
+    protected Nodo<E> beginnig, end;
 
     public Lista(){
-        cabeza = null;
-        cola = null;
+        beginnig = null;
+        end = null;
     }
 
     @Override
     public E get(int i){
-        Nodo<E> temporal = cabeza;
+        Nodo<E> temporal = beginnig;
         int ultimo_nodo = size()-1;
         for(int j = 0; j<ultimo_nodo; j++){
             if(j == ultimo_nodo){
@@ -22,46 +22,36 @@ public class Lista<E> implements IList<E> {
     }
 
     @Override
-    public boolean isEmpty(){
-        if(cabeza == null){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    @Override
     public void add(E value){
         if(!isEmpty()){
-            cola.siguiente = new Nodo<E>(value);
-            cola = cola.siguiente;
+            end.siguiente = new Nodo<E>(value);
+            end = end.siguiente;
         }
         else{
-            cabeza = cola = new Nodo<E>(value);
+            beginnig = end = new Nodo<E>(value);
         }
     }
 
     @Override
     public E remove(){
-        E elemento = cola.dato;
-        if(cabeza == cola){
-            cabeza = cola = null;
+        E elemento = end.dato;
+        if(beginnig == end){
+            beginnig = end = null;
         }
         else{
-            Nodo<E> temporal = cabeza;
-            while(temporal.siguiente != cola){
+            Nodo<E> temporal = beginnig;
+            while(temporal.siguiente != end){
                 temporal = temporal.siguiente;
             }
-            cola = temporal;
-            cola.siguiente = null;
+            end = temporal;
+            end.siguiente = null;
         }
         return elemento;
     }
 
     @Override
     public int size(){
-        Nodo<E> recorrer = cabeza;
+        Nodo<E> recorrer = beginnig;
         int contador = 0;
         while(recorrer != null){
             contador++;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-
+    //TODO Corregir bug de numero de opcion
     public static void main(String [] args){
         ArrayList<String>titulo = new ArrayList<>();
         titulo.add("  /$$$$$$            /$$                     /$$                 /$$                                     ");

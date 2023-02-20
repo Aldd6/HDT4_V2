@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class unitTests{
 
@@ -60,6 +61,22 @@ public class unitTests{
         stackVivo.push(5);
         var result = stackVivo.size();
         assertEquals(2, result, 0);
+    }
+
+    @Test
+    public void stackListaIsEmpty(){
+        StackFactory<Integer>stack = new StackFactory<>();
+        var stackVivo = stack.getStack(3);
+        var result = stackVivo.empty();
+        assertTrue( result);
+    }
+
+    @Test
+    public void stackListaDobleIsEmpty(){
+        StackFactory<Integer>stack = new StackFactory<>();
+        var stackVivo = stack.getStack(4);
+        var result = stackVivo.empty();
+        assertTrue(result);
     }
 
 }
